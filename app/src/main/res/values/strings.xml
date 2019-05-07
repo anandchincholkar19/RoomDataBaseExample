@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RoomDBExample</string>
+    <string name="edt_task_name">Enter your taskname </string>
+    <string name="edt_task_desc">Enter your task description </string>
+    <string name="edt_task_priorty">Enter your task priorty </string>
+    <string name="edt_task_remark">Enter your task remark </string>
+    <string name="edt_task_timeline">Enter your task timeline</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_clear">Clear</string>
+    <string name="txt_msg">Currently you don\'t have any task</string>
+
+</resources>

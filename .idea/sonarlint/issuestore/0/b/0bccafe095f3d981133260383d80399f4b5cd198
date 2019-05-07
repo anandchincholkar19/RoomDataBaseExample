@@ -1,0 +1,20 @@
+
+]squid:UselessImportCheck
+"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8¶ÿá¤§-
+dsquid:UselessImportCheck"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8†‡£’§-
+hsquid:CommentedOutCodeLineR"<This block of commented-out lines of code should be removed.(ýó‰8µ®Ì¤§-
+Isquid:S1659 "&Declare "btnClear" on a separate line.(ÐáË«øÿÿÿÿ8ßÌ—‘§-
+psquid:UselessImportCheck"@Remove this unused import 'android.support.annotation.Nullable'.(Ö‹øïüÿÿÿÿ8¶ÿá¤§-
+lsquid:UselessImportCheck"<Remove this unused import 'android.arch.lifecycle.Observer'.(ÞƒþÖÿÿÿÿÿ8¶ÿá¤§-
+gsquid:UnusedPrivateMethodo";Remove this unused private "navigateTaskListScreen" method.(¢Ÿƒª8µ®Ì¤§-
+W"squid:SwitchLastCaseIsDefaultCheckE""Add a default case to this switch.(Ôô“‚8—¶ò‘§-
+n
+squid:S128G"LEnd this switch case with an unconditional break, return or throw statement.(Çêø úÿÿÿÿ8‘òõ‘§-
+Nsquid:S1659"+Declare "edtTaskRemark" on a separate line.(Ÿîòöüÿÿÿÿ8Þµþ§-
+zsquid:S1450 "WRemove the "btnClear" field and declare it as a local variable in the relevant methods.(ÐáË«øÿÿÿÿ8¨í—‘§-
+isquid:S1301E"KReplace this "switch" statement by "if" statements to increase readability.(Ôô“‚8—¶ò‘§-
+Rsquid:S1659"/Declare "edtTaskDescrption" on a separate line.(Ÿîòöüÿÿÿÿ8Þµþ§-
+Psquid:S1659"-Declare "edtTaskTimeLine" on a separate line.(Ÿîòöüÿÿÿÿ8Þµþ§-
+|squid:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(çâîÀýÿÿÿÿ8óÀª’§-
+|squid:S2293;"YReplace the type specification in this constructor call with the diamond operator ("<>").(ý¶ñ‚þÿÿÿÿ8óÀª’§-
+ysquid:S1450 "VRemove the "btnSave" field and declare it as a local variable in the relevant methods.(ÐáË«øÿÿÿÿ8ßÌ—‘§-
