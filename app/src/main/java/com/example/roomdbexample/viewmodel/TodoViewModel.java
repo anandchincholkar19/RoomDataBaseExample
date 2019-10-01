@@ -13,7 +13,7 @@ import java.util.List;
 public class TodoViewModel extends AndroidViewModel {
 
     private TodoRepository todoRepository;
-    private LiveData<List<Task>>taskList;
+    private LiveData<List<Task>> taskList;
 
     public TodoViewModel(@NonNull Application application) {
         super(application);
@@ -21,9 +21,11 @@ public class TodoViewModel extends AndroidViewModel {
         taskList = todoRepository.getTaskList();
     }
 
-    public LiveData<List<Task>>getTaskList()
-    { return taskList;}
+    public LiveData<List<Task>> getTaskList() {
+        return taskList;
+    }
 
-    public void insertTask(Task task)
-    { todoRepository.insert(task); }
+    public void insertTask(Task task) {
+        todoRepository.insert(task);
+    }
 }

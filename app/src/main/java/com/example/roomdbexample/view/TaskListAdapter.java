@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.roomdbexample.R;
-
-import com.example.roomdbexample.callback.OnLongClickListner;
 import com.example.roomdbexample.entity.Task;
 
 import java.util.List;
@@ -21,14 +19,10 @@ public class TaskListAdapter extends
 
     private List<Task>mTaskList;
     private Context  mContext;
-    private OnLongClickListner mListner;
 
-    public TaskListAdapter(List<Task> taskList , Context context, OnLongClickListner listner ) {
+    public TaskListAdapter(List<Task> taskList, Context context ) {
         this.mTaskList = taskList;
         this.mContext = context;
-        this.mListner = listner;
-
-
     }
 
     @NonNull
@@ -38,21 +32,16 @@ public class TaskListAdapter extends
         return new TaskListViewHolder(layoutInflater);
     }
 
-
-
-
     @Override
     public void onBindViewHolder(@NonNull TaskListAdapter.TaskListViewHolder myViewHolder, int position) {
-
         Task task = mTaskList.get(position);
         myViewHolder.txtTaskName.setText(task.getTaskName());
         myViewHolder.txtTaskDescription.setText(task.getTaskNamedesc());
         myViewHolder.txtTaskPriorty.setText(task.getTaskPriority());
-        myViewHolder.txtTaskTimeLine.setText("" +task.getTaskTimeLine());
+        myViewHolder.txtTaskTimeLine.setText(String.valueOf(task.getTaskTimeLine())+mContext.getString(R.string.txt_hr));
         myViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                mListner.onViewLongClick(v);
                 return true;
             }
         });
@@ -63,10 +52,13 @@ public class TaskListAdapter extends
         return mTaskList.size();
     }
 
-    public class TaskListViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTaskName, txtTaskDescription,txtTaskTimeLine , txtTaskPriorty;
+    protected class TaskListViewHolder extends RecyclerView.ViewHolder {
+        TextView txtTaskName;
+        TextView txtTaskDescription;
+        TextView txtTaskTimeLine;
+        TextView txtTaskPriorty;
 
-        public TaskListViewHolder(@NonNull View itemView) {
+        private TaskListViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTaskName = itemView.findViewById(R.id.txt_task_name);
             txtTaskDescription = itemView.findViewById(R.id.txt_task_desc);

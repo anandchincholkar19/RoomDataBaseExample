@@ -13,19 +13,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.roomdbexample.R;
-import com.example.roomdbexample.Utils.Utility;
-import com.example.roomdbexample.callback.OnLongClickListner;
 import com.example.roomdbexample.entity.Task;
 import com.example.roomdbexample.viewmodel.TodoViewModel;
 
 import java.util.List;
 
-public class TaskListActivity extends AppCompatActivity implements View.OnClickListener , OnLongClickListner {
+public class TaskListActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView taskRecylerView;
     private TaskListAdapter taskListAdapter;
     private TodoViewModel todoViewModel;
     private FloatingActionButton fabButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,42 +34,31 @@ public class TaskListActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void setTaskList() {
-        taskRecylerView =  findViewById(R.id.recyler_task_list);
+        taskRecylerView = findViewById(R.id.recyler_task_list);
         fabButton = findViewById(R.id.floatingActionButton);
         fabButton.setOnClickListener(this);
         todoViewModel = ViewModelProviders.of(this).get(TodoViewModel.class);
         prepareRecyleView();
-
     }
 
     private void prepareRecyleView() {
-
-
-            todoViewModel.getTaskList().observe(this, new Observer<List<Task>>() {
-                @Override
-                public void onChanged(@Nullable List<Task> tasks) {
-                    if (tasks.size()!=0) {
-                        findViewById(R.id.text_message).setVisibility(View.GONE);
-                        taskListAdapter = new TaskListAdapter(tasks, TaskListActivity.this, new OnLongClickListner() {
-                            @Override
-                            public void onViewLongClick(View view) {
-
-                                Utility.showDialog(TaskListActivity.this);
-                            }
-                        });
-                        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                        taskRecylerView.setLayoutManager(mLayoutManager);
-                        taskRecylerView.setItemAnimator(new DefaultItemAnimator());
-                        taskRecylerView.setAdapter(taskListAdapter);
-                     }
-                     else {
-                            findViewById(R.id.text_message).setVisibility(View.VISIBLE);
-                    }
+        todoViewModel.getTaskList().observe(this, new Observer<List<Task>>() {
+            @Override
+            public void onChanged(@Nullable List<Task> tasks) {
+                if (tasks.size() != 0) {
+                    findViewById(R.id.text_message).setVisibility(View.GONE);
+                    taskListAdapter = new TaskListAdapter(tasks, TaskListActivity.this);
+                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                    taskRecylerView.setLayoutManager(mLayoutManager);
+                    taskRecylerView.setItemAnimator(new DefaultItemAnimator());
+                    taskRecylerView.setAdapter(taskListAdapter);
+                } else {
+                    findViewById(R.id.text_message).setVisibility(View.VISIBLE);
                 }
-            });
+            }
+        });
 
-        }
-
+    }
 
 
     private void setTaskListScreen() {
@@ -79,15 +67,8 @@ public class TaskListActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-
-        Intent addTaskIntent = new Intent(this,AddTaskActivity.class);
+        Intent addTaskIntent = new Intent(this, AddTaskActivity.class);
         startActivity(addTaskIntent);
-
     }
 
-
-    @Override
-    public void onViewLongClick(View view) {
-
-    }
 }

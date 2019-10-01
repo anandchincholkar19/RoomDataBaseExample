@@ -17,7 +17,7 @@ public class Task {
     @ColumnInfo(name = "taskNamedesc")
     private String taskNamedesc;
     @ColumnInfo(name = "taskTimeLine")
-    private int  taskTimeLine;
+    private int taskTimeLine;
     @ColumnInfo(name = "taskRemark")
     private String taskRemarks;
     @ColumnInfo(name = "taskPriority")
@@ -84,9 +84,8 @@ public class Task {
     }
 
 
-
     @Override
     public String toString() {
-        return  "taskname :" +taskName + "taskNamedesc : " + taskNamedesc +"taskprioty :" +taskPriority;
+        return "taskname :" + taskName + "taskNamedesc : " + taskNamedesc + "taskprioty :" + taskPriority;
     }
 }

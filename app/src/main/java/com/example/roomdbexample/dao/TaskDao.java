@@ -5,9 +5,10 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
-import com.example.roomdbexample.entity.Task;
-import java.util.List;
 
+import com.example.roomdbexample.entity.Task;
+
+import java.util.List;
 
 @Dao
 public interface TaskDao {
@@ -25,6 +26,6 @@ public interface TaskDao {
     LiveData<List<Task>> getAllTaskByTimeLine();
 
     @Query("SELECT * from task where taskPriority Like 'HIGH' ")
-    LiveData<List<Task>>getAllTaskByPriority();
+    LiveData<List<Task>> getAllTaskByPriority();
 
 }

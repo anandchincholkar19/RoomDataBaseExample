@@ -8,5 +8,6 @@
     <string name="btn_save">Save</string>
     <string name="btn_clear">Clear</string>
     <string name="txt_msg">Currently you don\'t have any task</string>
+    <string name="txt_hr">"hr"</string>
 
 </resources>

@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".view.TaskListActivity">
 
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyler_task_list"
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
         android:id="@+id/text_message"

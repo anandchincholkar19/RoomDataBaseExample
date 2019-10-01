@@ -2,11 +2,17 @@
 
 <resources>
 
-    <dimen name="twenty_margin">20dp</dimen>
-    <dimen name="twelve_margin">12dp</dimen>
-    <dimen name="ten_margin">10dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="twelve">12dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="eight">8dp</dimen>
+
     <dimen name="text_medium">14sp</dimen>
     <dimen name="text_small">12sp</dimen>
+
+
+
+
 
 
 </resources>
